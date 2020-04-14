@@ -154,6 +154,10 @@
             });
     });
         dbtn   = document.querySelector('#download'); dalert.style.display = 'block';
+	
+	Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
 </script>
 </body>
 </html>
