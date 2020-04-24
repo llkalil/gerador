@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+*{font-family: 'Roboto Condensed', sans-serif;}
+
+.color{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.inline{
+	display: inline;
+}
+
+.menu{
+	background-color: #ededed ;
+	border: 2px solid #dedede;
+	border-radius: 0px 5px 5px 0px;
+	width: 350px;
+	position: absolute;
+	top: 80%;
+	padding: 10px
+}
+
+#green{background-color: green;}
+#yellow{background-color: yellow}
+#blue{background-color:blue }
+#red{background-color: red}
+#orange{background-color: orange}
+#eraser img{
+	width: 15px;
+	height: 15px;
+	
+}
+#eraser{
+	margin-left: 5px;
+}
+#black{background-color: black}
+
+.cursor{
+	cursor: url('https://media1.giphy.com/media/JQk2mJI2ejORCHJDCu/source.gif');
+}
+.buton{
+	display: inline-block;
+	cursor: pointer;
+	border: 1px solid #000;
+	padding: 3px;
+	margin-left:10px;
+	border-radius: 4px
+}
+canvas{
+	cursor: crosshair; 
+}
