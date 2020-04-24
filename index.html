@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Drawing</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" type="icon/png" href="icon.png">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -13,10 +14,23 @@
       <div class="w3-container ">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <h1>Desenhe!</h1>
-        <p>desenhe o que você quiser, use o botão "Apagar" para apagar seu desenho. Use o botão "Download" para salvar a sua linda criação.</p>
+        <p>Desenhe o que você quiser, use o botão "Apagar" para apagar seu desenho. Use o botão "Download" para salvar a sua linda criação.</p>
       </div>
     </div>
   </div>
+
+   <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top">
+      <div class="w3-container ">
+        <h1>Desculpe!</h1>
+        <p>Nosso site ainda não funciona em smartphones, a data para você conseguir acessar esta funcionalidade é <script type="text/javascript"> 
+        var d = new Date(); 
+        document.write(d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear())
+      </script></p>
+      </div>
+    </div>
+  </div>
+
 
 
 <canvas id="canvas"></canvas>
@@ -43,11 +57,13 @@
  || navigator.userAgent.match(/iPod/i)
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)){
-    alert("You're using Mobile Device!!");
+    document.getElementById('id02').style.display='block'
+  }else{
+    document.getElementById('id01').style.display='block';
   }
 
 
-  document.getElementById('id01').style.display='block';
+  
 
 // create canvas element and append it to document body
 var canvas = document.getElementById("canvas");
