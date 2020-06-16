@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+<body >
+<a id="a"></a>
+<canvas id="canvas"></canvas>
+<div class="menu" >
+    <div class="toggle" id="togglediv" onclick="expand()" >
+        <i class="material-icons icon-add"  id="toggle" >
+            keyboard_arrow_right
+        </i>
+    </div>
+    <div class="items" id="items">
+        <div class="color" >
+                <span class="material-icons" id="green" onclick="cor(this)">
+                brush
+                </span>
+        </div>
+        <div class="color" >
+                <span class="material-icons" id="yellow" onclick="cor(this)">
+                brush
+                </span>
+        </div>
+        <div class="color">
+                <span class="material-icons" id="red" onclick="cor(this)">
+                brush
+                </span>
+        </div>
+        <div class="color" >
+                <span class="material-icons" id="blue" onclick="cor(this)">
+                brush
+                </span>
+        </div>
+        <div class="color" >
+                <span class="material-icons" id="orange" onclick="cor(this)">
+                brush
+                </span>
+        </div>
+        <div class="color">
+                <span class="material-icons" onclick="erase()">
+                clear
+                </span>
+        </div>
+        <div class="color">
+                <span class="material-icons" onclick="download()">
+                save_alt
+                </span>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
