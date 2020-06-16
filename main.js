@@ -1,8 +1,6 @@
 
 var canvas = document.getElementById("canvas");
 var a = document.getElementById('a');
-var formulario = document.getElementById('send_url');
-var input_formulario = document.getElementById('input_url');
 
 var color = "#000"
 var grossura = 5;
