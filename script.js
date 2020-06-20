@@ -117,7 +117,7 @@ function draw(e) {
 
     ctx.stroke(); // draw it!
 }
-var state = false;
+var state = true;
 
 
 function expand() {
