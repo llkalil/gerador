@@ -124,31 +124,6 @@ canvas{
 	z-index: -1;
 }
 
-.login{
-
-    position:absolute;
-    right:0;
-    top:0;
-    margin: 20px 30px 0px 0px;
-    text-align: center;
-
-}
-
-.login>a>button{
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    width: 80px;
-    cursor: pointer;
-}
-
-.button-form{
-	padding: 10px;
-	border: none;
-	border-radius: 3px;
-	width: 80px;
-	cursor: pointer;
-}
 
 .blue:hover{
     background-color: #2783af;
@@ -179,36 +154,6 @@ canvas{
                                   supported by Chrome, Opera and Firefox */
 }
 
-.img-desenhos{
-	width: 400px;
-	border: 2px solid #929292;
-    background-color: #e4e4e4;
-    height: 50px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 3px;
-
-}
-
-.img-desenhos>a>img{
-    border-radius: 3px;
-	width: 100px;
-    border: 1px solid #adadad;
-    background-color: white;
-
-}
-.info{
-    float: inherit;
-}
-.img-desenhos>a{
-    float: left;
-    margin-right: 5px;
-    display: block;
-}
-.img-desenhos>div{
-    display: inline-block;
-
-}
 .tools{
     margin-left: 1px;
     float: right;
