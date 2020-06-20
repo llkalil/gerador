@@ -84,17 +84,9 @@ function erase() {
 function download(){
 
     expand();
-    //document.getElementById('id01').style.display='block';
     var dataURL = canvas.toDataURL();
     var confirma = confirm('Fazer download?');
-
     var msg = prompt("Digite um nome para o arquivo:", "download");
-
-
-
-        ///input_formulario.value = dataURL;
-
-
         a.href = dataURL;
         a.download = msg;
         a.click();
@@ -117,11 +109,11 @@ function draw(e) {
 
     ctx.stroke(); // draw it!
 }
-var state = true;
 
-
+var state = false;
 function expand() {
-    if (state = false) {
+
+    if (state == false) {
         document.getElementById('items').style.transform = 'scaleX(1)';
         document.getElementById('toggle').style.transform = 'rotate(180deg)';
         state = true;
@@ -131,3 +123,5 @@ function expand() {
         state = false;
     }
 }
+
+
