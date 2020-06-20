@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Teste</title>
+    <title>Desenho</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-       
-    </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
 <body >
 <a id="a"></a>
 <canvas id="canvas"></canvas>
 <div class="menu" >
-    <div class="toggle" id="togglediv" onclick="expand();" >
-        <i class="material-icons icon-add"  id="toggle" >
+    <div class="toggle" id="togglediv" onclick="expand()" >
+        <i class="material-icons icon-add" id="toggle" >
             keyboard_arrow_right
         </i>
     </div>
@@ -36,7 +37,7 @@
                 brush
                 </span>
         </div>
-        <div class="color" > 
+        <div class="color" >
                 <span class="material-icons" id="orange" onclick="cor(this)">
                 brush
                 </span>
@@ -52,6 +53,6 @@
                 </span>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
-         <script src="script.js"></script> 
 </html>
