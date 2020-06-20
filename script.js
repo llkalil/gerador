@@ -32,7 +32,7 @@ function cor(obj) {
             color = "#000000";
             break;
         case "eraser":
-            color = "#ffffff";
+            color = "#eeeeee";
 
             break;
     }
