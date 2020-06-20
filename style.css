@@ -17,6 +17,7 @@ body {
 	padding: 0;
 	margin: 0;
 	display: flex;
+	cursor: crosshair;
 }
 
 .menu {
@@ -117,6 +118,9 @@ a>.material-icons {
 
 #orange {
 	color: orange
+}
+#black {
+	color: #000
 }
 
 canvas{
