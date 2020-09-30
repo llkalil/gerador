@@ -5,8 +5,8 @@ var rslt =  (cat1 * cat1);
   rslt +=  (cat2 * cat2);
   let resultado = Math.sqrt(rslt);
     rslt = resultado.toString();
-  $('#rslt').html("( "+cat1+" X "+cat1+" ) + ( "+cat2+" X "+cat2+" ) = " + rslt.substring(0,4)); 
-  $('#num3').html(rslt.substring(0,4))
+  $('#rslt').html("( "+cat1+" X "+cat1+" ) + ( "+cat2+" X "+cat2+" ) = " + rslt);
+  $('#num2').html(rslt)
   
 }
 
