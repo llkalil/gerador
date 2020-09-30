@@ -1,0 +1,228 @@
+* {
+	box-sizing: border-box
+}
+
+body {
+}
+
+.container {
+	font-family: Roboto;
+	width: 400px;
+	margin: 0 auto;
+	display: block;
+	background: #fff;
+	padding: 10px 50px 50px
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 50px
+}
+
+.group {
+	position: relative;
+  margin-top:20px;
+}
+
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid #757575
+}
+
+input:focus {
+	outline: 0
+}
+
+label {
+	color: #999;
+	font-size: 18px;
+	font-weight: 400;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: .2s ease all;
+	-moz-transition: .2s ease all;
+	-webkit-transition: .2s ease all
+}
+
+input:focus~label,
+input:valid~label {
+	top: -20px;
+	font-size: 14px;
+	color: #5264ae
+}
+
+.bar {
+	position: relative;
+	display: block;
+	width: 300px
+}
+
+.bar:after,
+.bar:before {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #5264ae;
+	transition: .2s ease all;
+	-moz-transition: .2s ease all;
+	-webkit-transition: .2s ease all
+}
+
+.bar:before {
+	left: 50%
+}
+
+.bar:after {
+	right: 50%
+}
+
+input:focus~.bar:after,
+input:focus~.bar:before {
+	width: 50%
+}
+
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0
+}
+
+input:focus~.highlight {
+	-webkit-animation: inputHighlighter .3s ease;
+	-moz-animation: inputHighlighter .3s ease;
+	animation: inputHighlighter .3s ease
+}
+
+@-webkit-keyframes inputHighlighter {
+	from {
+		background: #5264ae
+	}
+	to {
+		width: 0;
+		background: 0 0
+	}
+}
+
+@-moz-keyframes inputHighlighter {
+	from {
+		background: #5264ae
+	}
+	to {
+		width: 0;
+		background: 0 0
+	}
+}
+
+@keyframes inputHighlighter {
+	from {
+		background: #5264ae
+	}
+	to {
+		width: 0;
+		background: 0 0
+	}
+}
+
+button{
+   background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top:20px;
+  transition: 0.5s;
+  border-radius:7px;
+}
+
+button:hover{
+   background-color: #3f8f42;
+  transition: 0.5s;
+  border-radius:1px;
+}
+
+.triangulo{
+    position:relative;
+  margin-top:30px;
+  background-image: url('https://s1.static.brasilescola.uol.com.br/be/conteudo/images/a73ed387440ff2ce973908c733ac4054.jpg');
+  width:350px;
+  height:200px;
+}
+
+.triangulo .numero{
+  font-size:20px;
+  position:absolute;
+  background-color:#1cba22;
+  padding:2px 3px;
+  border-radius:4px;
+  color:#fff;
+  
+}
+.triangulo .numero:nth-child(1){
+  top:80px;
+  left:20px;
+}
+.triangulo .numero:nth-child(2){
+  top:60px;
+  left:190px;
+}
+.triangulo .numero:nth-child(3){
+  top:185px;
+  left:170px;
+}
+
+.triangulo .numero:nth-child(1)::after{
+  content:' Cateto';
+
+}
+.triangulo .numero:nth-child(2)::after{
+  content:' Hipotenusa';
+}
+.triangulo .numero:nth-child(3)::after{
+  content:' Cateto';
+}
+
+.triangulo .numero:nth-child(3)::after,
+.triangulo .numero:nth-child(2)::after,
+.triangulo .numero:nth-child(1)::after{
+  display:inline-block;
+  -webkit-transform:scaleX(0);
+  transition:.3s;
+  position:absolute;
+  background-color:#1cba22;
+  padding:2px 3px;
+  border-top-right-radius:4px;
+  border-bottom-right-radius:4px;
+  color:#fff;
+  top:0;
+  transform-origin:left;
+  
+}
+
+.triangulo .numero:nth-child(1):hover::after{
+    display:initial;
+  transform:scaleX(1);
+
+}
+.triangulo .numero:nth-child(2):hover::after{
+ display:initial;
+  transform:scaleX(1);
+}
+.triangulo .numero:nth-child(3):hover::after{
+ display:initial;
+  transform:scaleX(1);
+}

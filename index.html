@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Google Material Design Input Boxes</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <h2>Calcular a hipotenusa a partir dos catetos</h2>
+  <h4 id="rslt">Digite e veja a mágica:</h4>
+  
+  <form>
+    
+    <div class="group">      
+      <input type="number" id="cat1" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Número</label>
+    </div>
+    
+    <div class="group">      
+      <input type="number" id="cat2" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Número</label>
+    </div>
+    <button type="button" onclick="calc()">Calcular!</button>
+  </form>
+  <div class="triangulo">
+    <span id="num1" class="numero">X</span>
+    <span id="num2" class="numero">X</span>
+    <span id="num3" class="numero">X</span>
+  </div>
+  
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
