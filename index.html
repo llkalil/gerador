@@ -1,55 +1,120 @@
+<!--
+Autor: Lorenzo Kalil
+E-Mail: lo@tri.rs
+-->
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cálculo da hipotenusa</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
-  
-  <link rel="icon" href="./icon.png" type="image/png">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179310053-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  gtag('config', 'UA-179310053-1');
-</script>
+    <title>Biologia</title>
 
-
+    <link rel="stylesheet" href="app.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="container">
-  <h2>Calcular a hipotenusa a partir dos catetos</h2>
-  <h4 id="rslt">Digite e veja a mágica:</h4>
-  
-  <form>
-    
-    <div class="group">      
-      <input type="number" id="cat1" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Número</label>
-    </div>
-    
-    <div class="group">      
-      <input type="number" id="cat2" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Número</label>
-    </div>
-    <button type="button" onclick="calc()">Calcular!</button>
-  </form>
-  <div class="triangulo">
-    <span id="num1" class="numero">X</span>
-    <span id="num2" class="numero">X</span>
-    <span id="num3" class="numero">X</span>
-  </div>
-  <center style="margin-top: 20px"><b>By </b> Lorenzo Kalil <div class="copyright" align="center"><script>document.write('&copy;' );document.write(new Date().getFullYear());document.write('  - All Rights Reserved.');</script></div></center>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+<body class="flex bg-gray-100 flex-col items-center justify-center gap-6 min-h-screen" x-data="{showModal:false}" x-init="showModal = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))">
+<h1 class="text-5xl mb-8">
+    Calculadora de DNA
+</h1>
+<div class="flex items-center justify-center gap-6 ">
+    <div class="flex  flex-col gap-3 justify-center items-center w-[536px] border-r-2 pr-6" x-data="{i:0}">
+        <h1 class="text-2xl bold">DNA</h1>
+        <div class="flex flex-col justify-center gap-2 items-center tape-container w-full">
+            <div class="flex gap-2 w-full items-center justify-start">
+                <h2>5'</h2>
+                <template x-for="i in 12">
+                    <input maxlength="1" @input="updateNucleotideos($el,$event)" :id="'bases_' + i"
+                           class="bg-white tape text-center rounded-lg shadow-lg uppercase p-1 border w-8">
+                </template>
+                <h2>3'</h2>
+            </div>
+            <div class="flex gap-2 w-full items-center justify-start">
+                <h2>3'</h2>
+                <div id="complementary-tape" class="flex justify-start gap-2 w-full items-center"></div>
+                <h2>5'</h2>
+            </div>
+        </div>
 
+        <h1 class="text-2xl bold">RNA <span class="text-sm text-gray-500">Mensageiro (Códons)</span></h1>
+        <div class="grid grid-cols-1 justify-center gap-2 items-center tape-container max-w-12 w-full">
+            <div class="flex gap-2 w-full items-center justify-between">
+                <h2>3'</h2>
+                <div id="rna-mens" class="flex justify-start gap-2 w-full items-center"></div>
+                <h2>5'</h2>
+            </div>
+        </div>
+        <h1 class="text-2xl bold">RNA <span class="text-sm text-gray-500">Transportador (Anticódons)</span></h1>
+        <div class="grid grid-cols-1 justify-center gap-2 items-center tape-container max-w-12 w-full">
+            <div class="flex gap-2 w-full items-center justify-between">
+                <h2>3'</h2>
+                <div id="rna-trans" class="flex justify-start gap-2 w-full items-center"></div>
+                <h2>5'</h2>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 justify-center gap-2 items-center tape-container max-w-12 w-full">
+            <div class="flex gap-2 w-full items-center justify-between">
+                <h2 class="invisible">3'</h2>
+                <div id="aminoacids" class="flex justify-start gap-2 w-full items-center"></div>
+                <h2 class="invisible">5'</h2>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col gap-3 justify-start items-center">
+        <h1 class="text-2xl bold">Info. Adicionais</h1>
+        <div class="w-full grid grid-cols-2 gap-1">
+            <h1>Bases Púricas <span class="text-sm text-gray-500">(A,G)</span>:</h1>
+            <h1 id="purinas" class="ml-2">0</h1>
+            <h1>Bases Pirimidicas <span class="text-sm text-gray-500">(C,T,U)</span>:</h1>
+            <h1 id="pirimidinas" class="ml-2">0</h1>
+            <h1>Ligações de hidrogênio :</h1>
+            <h1 id="ligacoes-hidr" class="ml-2">0</h1>
+            <h1>Ligações fosfodiéster :</h1>
+            <h1 id="ligacoes-fosf" class="ml-2">0</h1>
+        </div>
+    </div>
+</div>
+<footer class="absolute w-full bottom-0 p-2 bg-white shadow-lg border-t">
+    <div class="flex flex-wrap items-center md:justify-between justify-end">
+        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+            <div class="text-sm flex items-center justify-between text-blueGray-500 font-semibold py-1">
+               <div>
+                   Copyright © <span id="year" class="mr-"></span> -
+                   <a href="mailto:lo@tri.rs" class="text-blueGray-500 ml2 hover:text-blueGray-800">Lorenzo Kalil</a>.
+               </div>
+
+                <div class="text-sm flex items-center text-blueGray-500 font-semibold py-1">
+                    <img src="instagram.gif" class="w-4 " alt="">
+                    <a href="https://www.instagram.com/lorenz_kalil/" class="text-blueGray-500 bold ml-1 hover:text-blueGray-800">@lorenz_kalil</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="app.min.js"></script>
+
+
+
+
+<div x-show="showModal" x-cloak x-transition class="w-full h-full bg-gray-900 bg-opacity-80 top-0 fixed sticky-0">
+    <div class="2xl:container  2xl:mx-auto py-48 px-4 md:px-28 flex justify-center items-center">
+        <div class="w-96 md:w-auto rounded-lg relative flex flex-col justify-center items-center bg-white py-11 px-4 md:px-24 xl:py-10 xl:px-36">
+            <div class="mt-6">
+                <h1 class="text-3xl  lg:text-4xl font-semibold leading-7 lg:leading-9 text-center text-gray-800">Você está no celular!</h1>
+            </div>
+            <div class="mt">
+                <p class="mt-6 sm:w-80 text-base leading-7 text-center text-gray-800">Este aplicativo não foi testado para celulares, portanto use por sua conta e risco!</p>
+            </div>
+            <button @click="showModal = false" class="text-gray-800 dark:text-gray-400 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" aria-label="close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button @click="showModal = false" class="rounded-lg p-4 mt-6 bg-gray-800 text-white">Entrar mesmo assim</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
